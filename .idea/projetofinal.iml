@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/vusy_project/vendor/MF" isTestSource="false" packagePrefix="MF\" />
+      <sourceFolder url="file://$MODULE_DIR$/vusy_project/App" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/vusy_project/vendor/MF/Controller" />
+      <excludeFolder url="file://$MODULE_DIR$/vusy_project/vendor/MF/Init" />
+      <excludeFolder url="file://$MODULE_DIR$/vusy_project/vendor/MF/Model" />
+      <excludeFolder url="file://$MODULE_DIR$/vusy_project/vendor/composer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

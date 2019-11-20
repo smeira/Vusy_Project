@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+	  <div class="navbar-nav">
+	  	<a class="menuItem" href="/timeline">
+	  		Home
+	  	</a>
+		  
+	  	<a class="menuItem" href="/sair">
+	  		Sair
+	  	</a>
+			<img src="/img/vusmini.png" class="menuIco" />
+	  </div>
+	</div>
+</nav>
+
+<div class="container mt-5">
+	<div class="row pt-2">
+		
+		<div class="col-md-3">
+
+			<div class="perfil">
+				<div class="perfilTopo">
+
+				</div>
+
+				<div class="perfilPainel">
+					
+					<div class="row mt-2 mb-2">
+						<div class="col mb-2">
+							<span class="perfilPainelNome">
+								<?= $this->view->info_usuario['nome'] ?>
+							</span>
+						</div>
+					</div>
+
+					<div class="row mb-2">
+
+						<div class="col">
+							<span class="perfilPainelItem">Vus</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_vus['total_vus'] ?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="perfilPainelItem">Seguindo</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguindo['total_seguindo'] ?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="perfilPainelItem">Seguidores</span><br />
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguidores['total_seguidores'] ?>
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-6">
+			<div class="row mb-2">
+				<div class="col vusBox">
+					<form method="post" action="/vus">
+						<textarea class="form-control" name="vus" id="exampleFormControlTextarea1" rows="3"></textarea>
+						
+						<div class="col mt-2 d-flex justify-content-end">
+							<button type="submit" class="btn btn-info">Faça um Vus!</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+			<!-- Estrutura de repetição -->
+			<?php foreach($this->view->vus as $id_vus => $vus) { ?>
+				<div class="row tweet">
+					<div class="col">
+						<!-- recupera a var do índice nome e data -->
+						<p><strong><?=$vus['nome']?></strong> <small><span class="text text-muted">- <?=$vus['data']?></span></small></p> 
+						<p><?=$vus['vus']?></p> <!-- recupera o vus (tweet)-->
+						<br />
+						
+						<?php if($vus['id_usuario'] == $_SESSION['id']) { ?>
+							<form method="POST" action="/remover">
+								<div class="col d-flex justify-content-end">
+								<button type="submit" class="btn btn-danger"><small>Remover</small></button>
+								</div>
+							</form>
+						<?php } ?>
+					</div>
+				</div>
+			<?php } ?>
+
+
+		</div>
+
+
+		<div class="col-md-3">
+			<div class="quemSeguir">
+				<span class="quemSeguirTitulo">Quem seguir</span><br />
+				<hr />
+				<a href="/quem_seguir" class="quemSeguirTxt">Procurar por pessoas conhecidas</a>
+			</div>
+		</div>
+
+	</div>
+</div>

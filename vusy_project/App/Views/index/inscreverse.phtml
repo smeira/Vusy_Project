@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 36rem;">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-center">
+          <img src="/img/vuspeq.png" />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2>Cadastre-se:</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            
+            <form action="/registrar" method="post">
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['nome'] ?>" name="nome" class="form-control" placeholder="Nome">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['email'] ?>" name="email" class="form-control" placeholder="E-mail">
+              </div>
+
+              <div class="form-group">
+                <input type="password" value="<?= $this->view->usuario['senha'] ?>" name="senha" class="form-control" placeholder="Senha">
+              </div>
+
+              <!-- Upload de foto -->
+              <div class="form-group">                            
+              <input type="file" action="enviar.php" method="POST" enctype="multipart/form-data" value="<?= $this->view->usuario['imagem'] ?>" name="imagem" class="form-control" placeholder="">
+              </div>
+              <!--
+              @if($usuario->imagem)
+              <div>
+              <img width="100px" src="{{url('imagens/' . $usuario->imagem)}}">
+              </div>
+               @endif
+               -->
+              
+            
+
+              
+              <div class="mt-4 mb-4">
+                <small class="form-text">
+                  Ao inscrever-se, você concorda com os Termos de Serviço e com as Políticas de Privacidade, incluindo o Uso de Cookies. Outras pessoas poderão encontrar você pelo e-mail fornecido.
+                </small>
+              </div>
+              <button type="submit" class="btn btn-info btn-block">Inscrever-se</button> 
+              <!-- Botão voltar -->
+              <a href="/" class="btn btn-secondary btn-block mb-2">Voltar</a>
+                
+                
+                           
+              
+
+              <!-- Apresenta mensagem de erro ao cadastrar -->
+              <?php if($this->view->erroCadastro) { ?>
+
+                <small class="form-text text-danger">Erro! Verifique se os campos foram preenchidos corretamente.</small>
+
+              <?php } ?>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

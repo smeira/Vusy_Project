@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vusy_project/vendor/MF/Init" />
+      <path value="$PROJECT_DIR$/vusy_project/vendor/composer" />
+      <path value="$PROJECT_DIR$/vusy_project/vendor/MF/Model" />
+      <path value="$PROJECT_DIR$/vusy_project/vendor/MF/Controller" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+</project>
